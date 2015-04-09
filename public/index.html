@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="background">
+<head>
+    <title>TagPro</title>
+    <link rel="stylesheet" href="stylesheets/style.css?v=1">
+    <script src="/compact/global-game.js">
+
+    </script>
+    <link rel="stylesheet" href="/stylesheets/shake.css?v=1">
+    <script src="/socket.io/socket.io.js">
+    </script>
+    <script>
+        tagpro.musicHost = "localhost";
+    </script>
+    <script>
+        tagpro.serverPort = 80;
+        tagpro.serverHost = location.hostname + (tagpro.serverPort != 80 ? ':' + tagpro.serverPort : '');
+        tagpro.socketPort = 81;
+        tagpro.socketHost = location.hostname + (tagpro.socketPort != 80 ? ':' + tagpro.socketPort : '');
+        tagpro.cookieHost = '';
+    </script>
+</head>
+<body>
+<div id="sound">
+    <div id="soundEffects"></div>
+    <div id="soundMusic"></div>
+</div>
+<canvas id="viewport" width="1280" height="800"></canvas>
+<a id="exit" href="#">< Exit</a>
+<div class="news hidden"><a href="http://reddit.com/r/TagPro/" class="redditLink">Map Thread #45 Top Maps Feedback Thread</a></div>
+<div class="message"></div>
+<div id="loadingMessage">Loading...</div>
+<div id="options">
+    <div id="mapInfo" style="float: left" class="hide tight"></div>
+    <div id="musicInfo" style="float: right" class="hide tight"></div>
+    <table id="stats" style="clear: both"><tr><th>Player</th><th>Score</th><th>Tags</th><th>Popped</th><th>Grabs</th><th>Drops</th><th>Hold</th><th>Captures</th><th>Prevent</th><th>Returns</th><th>Support</th><th>Rank Pts</th><th></th></tr><tbody class="stats"><tr class="template"><td><span style="color:#BFFF00" class="scoreAuth"></span>&nbsp;<span class="scoreName"></span></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><a href="kick" class="kick">report</a></td></tr></tbody></table><div id="optionsName"><span>Name:</span><input id="name" maxlength="12"><span id="mapRatingContainer" class="hidden"><span style="margin-left: 10px;">Rate Map:</span><select id="mapRating"><option value="">(Select)</option><option value="1">I like it</option><option value="0">I'm Indifferent</option><option value="-1">I dislike it</option></select></span></div><div><a id="switchButton" href="switch">Switch Teams</a></div><div id="optionsLinks"><div class="tight"><a href="http://www.reddit.com/r/tagpro" target="_blank"><img src="/images/reddit.png" border="0"><span>/r/tagpro - bugs, suggestions and discussion</span></a></div><div class="tight"><a href="https://www.facebook.com/tagprogame" target="_blank"><img src="/images/facebook.png" border="0"><span>Facebook - like us and tell your friends</span></a></div><div class="tight"><a href="http://twitter.com/thekoalabeast" target="_blank"><img src="/images/twitter.png" border="0"><span>@TheKoalaBeast - help spread the word and get updates</span></a></div></div><div id="optionsAd">
+</div></div><div id="kick"><h3 class="smaller">Report Player:<span id="kickPlayer"></span><span>?</span></h3><p class="center">This can result in a temporary ban for them.</p><p class="center"><span class="larger">Reason:</span><select id="kickSelect" class="larger"><option value="0">select reason to report...</option><option value="1">offensive name</option><option value="2">offensive or spammy chat</option><option value="3">working against own team</option><option value="4">afk too much</option><option value="8">cheating or botting</option><option value="10">chat harassment</option></select></p><p class="center"><a id="kickCancelButton" href="cancel" class="button">Cancel</a></p></div><div id="sendToPreferred"><h3>Sending you to&nbsp;<span id="preferredServer"></span><span>&nbsp;in&nbsp;</span><span id="countdown"></span></h3><a id="sendToPreferredCancel" href="cancel" class="button">Stay Here</a></div><input id="groupId" type="hidden" value="null"><div id="chatHistory"></div><input id="chat" maxlength="70">
+<div id="assets">
+    <img id="tiles" src="/images/tiles.png" class="asset">
+    <img id="splats" src="/images/splats.png" class="asset">
+    <img id="flair" src="/images/flair.png" class="asset">
+    <img id="speedpad" src="/images/speedpad.png" class="asset">
+    <img id="speedpadred" src="/images/speedpadred.png" class="asset">
+    <img id="speedpadblue" src="/images/speedpadblue.png" class="asset">
+    <img id="portal" src="/images/portal.png" class="asset">
+    <img id="particle" src="/images/particle.png" class="asset">
+    <img id="particleFire" src="/images/particle-fire.png" class="asset">
+    <img id="ballpopred" src="/images/ballpopred.png" class="asset">
+    <img id="ballpopblue" src="/images/ballpopblue.png" class="asset">
+    <img id="gravityWell" src="/images/gravitywell.png" class="asset">
+    <audio id="burst" preload="auto"><source src="/sounds/burst.mp3" type="audio/mp3"></audio><audio id="alert" preload="auto"><source src="/sounds/alert.mp3" type="audio/mp3"></audio><audio id="cheering" preload="auto"><source src="/sounds/cheering.mp3" type="audio/mp3"></audio><audio id="drop" preload="auto"><source src="/sounds/drop.mp3" type="audio/mp3"></audio><audio id="sigh" preload="auto"><source src="/sounds/sigh.mp3" type="audio/mp3"></audio><audio id="powerup" preload="auto"><source src="/sounds/powerup.mp3" type="audio/mp3"></audio><audio id="pop" preload="auto"><source src="/sounds/pop.mp3" type="audio/mp3"></audio><audio id="click" preload="auto"><source src="/sounds/click.mp3" type="audio/mp3"></audio><audio id="explosion" preload="auto"><source src="/sounds/explosion.mp3" type="audio/mp3"></audio><audio id="countdown" preload="auto"><source src="/sounds/countdown.mp3" type="audio/mp3"></audio><audio id="friendlydrop" preload="auto"><source src="/sounds/friendlydrop.mp3" type="audio/mp3"></audio><audio id="friendlyalert" preload="auto"><source src="/sounds/friendlyalert.mp3" type="audio/mp3"></audio><audio id="alertlong" preload="auto"><source src="/sounds/alertlong.mp3" type="audio/mp3"></audio><audio id="go" preload="auto"><source src="/sounds/go.mp3" type="audio/mp3"></audio><audio id="degreeup" preload="auto"><source src="/sounds/degreeup.mp3" type="audio/mp3"></audio><audio id="teleport" preload="auto"><source src="/sounds/teleport.mp3" type="audio/mp3"></audio><audio id="wind" preload="auto" loop data-ramp="true"><source src="/sounds/wind.mp3" type="audio/mp3"></audio>
+</div></body></html>

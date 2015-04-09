@@ -1,0 +1,21 @@
+{
+  "name": "tagpro-testbed",
+  "version": "0.0.0",
+  "description": "Capture The Flag",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jshint . && jscs ."
+  },
+  "author": "Carl Colglazier <carl@carlcolglazier.com> (http://carlcolglazier.com/)",
+  "dependencies": {
+    "ctf": "0.1.0",
+    "hapi": "^8.4.0",
+    "socket.io": "^1.3.5"
+  },
+  "devDependencies": {
+    "jscs": "^1.12.0",
+    "jshint": "^2.6.3"
+  }
+}

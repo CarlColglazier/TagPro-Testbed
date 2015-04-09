@@ -1,0 +1,1042 @@
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+html.background {
+    background:black url('/images/background.jpg') no-repeat center center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+article {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+article.show
+{
+    display: block;
+}
+
+h1 {
+    background: transparent url(/images/logo.png) no-repeat top left;
+    width: 618px;
+    height: 108px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    clear: both;
+    background: transparent url(/images/KoalaBeast.png) no-repeat top left;
+    width: 300px;
+    height: 172px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+h1 > span,
+h2 > span
+{
+    display: none;
+}
+
+h3
+{
+    font-size: 250%;
+    text-align: center;
+}
+
+h3.smaller
+{
+    font-size: 150%;
+}
+
+h3 > a
+{
+    display: block;
+    font-size: 12pt;
+}
+
+div.buttons
+{
+    text-align: center;
+}
+
+div.buttons.serverList
+{
+    float: left;
+    min-width: 276px;
+    min-height: 1080px;
+}
+
+div.buttons.flow a.button
+{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+div.buttons.flow a.button.hide
+{
+    display: none;
+}
+
+.right
+{
+    float: right;
+}
+
+div.right > iframe
+{
+    border: solid 3px #608100;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.button,
+button.button
+{
+    display: inline-block;
+    min-width: 150px;
+    background-color: #ACE600;
+    color: #000000;
+    font-size: 20pt;
+    text-align: center;
+    font-weight: bold;
+    font-family: monospace;
+    border: solid 3px #608100;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+.button.hide
+{
+    display: none;
+}
+
+.buttons.smaller > a.button
+{
+    min-width: 100px;
+    font-size: 16pt;
+}
+
+a.button.server
+{
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.button.server.hide {
+    display: none;
+}
+
+a.button.disable {
+    cursor: not-allowed;
+    border-color: #7C8686;
+    background-color: #CBCBCB;
+}
+
+a.button > span
+{
+    display: block;
+    font-size: 9pt;
+}
+
+a.button > span.strong
+{
+    display: block;
+    font-size: 12pt;
+}
+
+a.button + a.button
+{
+    margin-left: 10px;
+}
+
+a.button.server + a.button.server
+{
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+a.button.darken
+{
+    background-color: #739B00;
+    border-color: #4D6700;
+}
+
+#viewport
+{
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+#viewportDiv
+{
+    border: 10px solid white;
+    z-index: -1;
+    display: none;
+}
+
+#loadingMessage {
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 300%;
+    width: 100%;
+    text-align: center;
+}
+
+.asset
+{
+    display: none;
+}
+
+div#chatHistory
+{
+    position: absolute;
+    width: 550px;
+    height: 150px;
+    overflow: hidden;
+    text-shadow:
+       -1px -1px 5px #000,
+        1px -1px 5px #000,
+        -1px  1px 5px #000,
+        1px  1px 5px #000,
+       -1px -1px 1px #000,
+       1px -1px 1px #000,
+       -1px  1px 1px #000,
+       1px  1px 1px #000;
+    font-family: arial, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    cursor: default;
+    padding-left: 5px;
+}
+
+div#chatHistory > div + div {
+    margin-top: 2px;
+}
+
+div#chatHistory > div > .auth {
+    color: #BFFF00;
+    margin-right: 2px;
+}
+
+div#chatHistory > div > .name:after {
+    content: ': ';
+}
+
+input#chat
+{
+    position: absolute;
+    display: none;
+    width: 350px;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, .75);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 3px;
+}
+
+ul.controls {
+    color: white;
+    margin: 0px;
+    padding: 0px;;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    list-style: none;
+    width: 600px;
+}
+
+ul.controls > li{
+    display: block;
+    height: 100px;
+    float: left;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+ul.controls > li > *
+{
+
+}
+
+div#options
+{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    width: 765px;
+    height: 485px;
+    padding: 15px;
+    border: 2px solid white;
+}
+
+div#options table
+{
+    width: 100%;
+    margin-top: 0px;
+}
+
+div#options table th
+{
+    background-color: rgba(0, 0, 0, .5);
+}
+
+div#options table td
+{
+    background-color: rgba(0, 0, 0, .25);
+}
+
+div#options table th,
+div#options table td
+{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+div#options table tr.template
+{
+    display: none;
+}
+
+div#options > * + *
+{
+    margin-top: 25px;
+}
+
+div#kick
+{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .75);
+    display: none;
+    width: 400px;
+    padding: 15px;
+    border: 2px solid white;
+}
+
+div#sendToPreferred
+{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .75);
+    display: none;
+    width: 400px;
+    padding: 15px;
+    border: 2px solid white;
+}
+
+a{
+    color: #00FF00;
+}
+
+div#options > div + div
+{
+    margin-top: 15px;
+}
+
+div#options > div + div.tight
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.section
+{
+    clear: both;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.section.smaller
+{
+    padding-top: 25px;
+}
+
+.section.tiny
+{
+    padding-top: 15px;
+}
+
+.section.bottomPadding
+{
+    padding-bottom: 25px;
+}
+
+.section.bottomPadding.tiny {
+    padding-bottom: 15px;
+}
+
+.section.lineup
+{
+    text-align: left;
+    width: 405px;
+}
+
+.center
+{
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+a > img
+{
+    position: relative;
+    top: 6px;
+    margin-right: 5px;
+    margin-right: 6px;
+}
+
+p.warning
+{
+    text-align: center;
+    background-color: #4F0000;
+    color: #FFD0D0;
+    padding: 5px;
+}
+
+div.news
+{
+    padding-top: 3px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+}
+
+div.message
+{
+    padding-bottom: 3px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+}
+
+div#sound
+{
+    width: 64px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+div#soundEffects
+{
+    width: 32px;
+    height: 32px;
+    background: transparent url(/images/soundon.png) no-repeat top left;
+    cursor: pointer;
+    display: block;
+    float: left;
+}
+
+div#soundEffects.off
+{
+    background-image: url(/images/soundoff.png);
+}
+
+div#soundMusic
+{
+    width: 32px;
+    height: 32px;
+    background: transparent url(/images/musicon.png) no-repeat top left;
+    cursor: pointer;
+    display: block;
+    float: left;
+}
+
+div#soundMusic.off
+{
+    background-image: url(/images/musicoff.png);
+}
+
+a#exit
+{
+    font-size: 150%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+table.board
+{
+    font-size: 150%;
+    width: 100%;
+}
+
+table.board.smaller
+{
+    font-size: 100%;
+}
+
+table.board + table.board
+{
+    margin-top: 30px;
+}
+
+table.board th
+{
+    background-color: #535353;
+}
+
+table.board td
+{
+    background-color: rgba(0, 0, 0, .25);
+}
+
+table.board th,
+table.board td
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+table.board td.alt
+{
+    background-color: #272727;
+}
+
+table.board td.noPad {
+    padding: 0px;
+}
+
+div.sideAds {
+    position: fixed;
+    right: 10px;
+    top: 180px;
+}
+
+.hide{
+    display: none;
+}
+
+.servers
+{
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.servers *
+{
+    font-size: 150%;
+}
+
+.servers span{
+    position: relative;
+    top: -2px;
+}
+
+.servers select
+{
+    background-color: #DFFF81;
+    border-bottom-color: #608100;
+    padding: 5px;
+}
+
+div.flair
+{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url(/images/flair.png);
+    background-repeat: no-repeat;
+}
+
+tr.fade
+{
+    opacity:0.25;
+    filter:alpha(opacity=25);
+}
+
+.bad
+{
+    color: red;
+}
+
+.good
+{
+    color: green;
+}
+
+.yellow
+{
+    color: yellow;
+}
+
+#slider
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: block;
+    width: 400px;
+}
+
+div.amount
+{
+    font-size: 200%;
+}
+
+input#amount
+{
+    font-size: 100%;
+    text-align: center;
+    width: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+div.amountBonus
+{
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+div.amountBonus + div.amountBonus
+{
+    margin-top: 10px;
+}
+
+a#donate
+{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+a#donate > span
+{
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+
+form
+{
+    text-align: left;
+}
+
+form > div > label
+{
+    width: 100px;
+    display: inline-block;
+    text-align: left;
+}
+
+form > div > input
+{
+    width: 125px;
+}
+
+form > div > div {
+    display: inline-block;
+    width: 125px;
+    text-align: left;
+}
+
+form > div.buttons
+{
+    margin-top: 20px;
+}
+
+div.chat
+{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+div.chat > div.history
+{
+    height: 100px;
+    overflow: auto;
+    border: 1px solid #608100;
+    padding: 8px;
+}
+
+div.chat > div.send > span
+{
+    display: inline-block;
+    width: 100px;
+}
+
+div.chat > div.send > input {
+    width: 395px;
+}
+
+.larger
+{
+    font-size: 125%;
+}
+
+.setting
+{
+    display: block;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.redditLink {
+    background: #283600 url(/images/reddit.png) no-repeat 10px center;
+    padding-left: 38px;
+    padding-right: 10px;
+    height: 28px;
+    display: inline-block;
+    padding-top: 12px;
+    border: 1px solid #608100;
+    color: white;
+    font-weight: bold;
+    max-width: 545px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+input#paypal {
+    border: none;
+    padding: 0px;
+    background: transparent url(/images/paypal.png) no-repeat;
+    width: 135px;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+input#bitcoin {
+    border: none;
+    padding: 0px;
+    background: transparent url(/images/bitcoin.png) no-repeat;
+    width: 135px;
+    height: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.error {
+    background: #261B0A;
+    display: inline-block;
+    padding: 12px 10px;
+    border: 1px solid #8F0000;
+    max-width: 545px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.meter {
+    height: 25px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 2px;
+    background: #555;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+    -webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+       -moz-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+            box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter .progress-container {
+    height: 100%;
+    position: relative;
+}
+
+.meter .progress {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    -webkit-border-top-right-radius: 8px;
+        -moz-border-radius-topright: 8px;
+            border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+        -moz-border-radius-bottomright: 8px;
+            border-bottom-right-radius: 8px;
+     -webkit-border-top-left-radius: 20px;
+         -moz-border-radius-topleft: 20px;
+             border-top-left-radius: 20px;
+     -webkit-border-bottom-left-radius: 20px;
+         -moz-border-radius-bottomleft: 20px;
+             border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    background-image:
+      -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(43,194,83)),
+        color-stop(1, rgb(84,240,84))
+     );
+    background-image:
+      -moz-linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,240,84) 69%
+     );
+    -webkit-box-shadow:
+              inset 0 2px 9px  rgba(255,255,255,0.3),
+              inset 0 -2px 6px rgba(0,0,0,0.4);
+       -moz-box-shadow:
+              inset 0 2px 9px  rgba(255,255,255,0.3),
+              inset 0 -2px 6px rgba(0,0,0,0.4);
+            box-shadow:
+              inset 0 2px 9px  rgba(255,255,255,0.3),
+              inset 0 -2px 6px rgba(0,0,0,0.4);
+    -webkit-animation: moveball 1.5s ease-in-out;
+       -moz-animation: moveball 1.5s ease-in-out;
+}
+
+.meter .progress:after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 1;
+    background-image: 
+       -webkit-gradient(linear, 0 0, 100% 100%, 
+          color-stop(.25, rgba(255, 255, 255, .2)), 
+          color-stop(.25, transparent), color-stop(.5, transparent), 
+          color-stop(.5, rgba(255, 255, 255, .2)), 
+          color-stop(.75, rgba(255, 255, 255, .2)), 
+          color-stop(.75, transparent), to(transparent)
+       );
+    background-image: 
+      -moz-linear-gradient(
+        -45deg, 
+          rgba(255, 255, 255, .2) 25%, 
+          transparent 25%, 
+          transparent 50%, 
+          rgba(255, 255, 255, .2) 50%, 
+          rgba(255, 255, 255, .2) 75%, 
+          transparent 75%, 
+          transparent
+       );
+    -webkit-background-size: 50px 50px;
+       -moz-background-size: 50px 50px;
+            background-size: 50px 50px;
+    -webkit-border-top-right-radius: 8px;
+        -moz-border-radius-topright: 8px;
+            border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+        -moz-border-radius-bottomright: 8px;
+            border-bottom-right-radius: 8px;
+    -webkit-border-top-left-radius: 20px;
+        -moz-border-radius-topleft: 20px;
+            border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+        -moz-border-radius-bottomleft: 20px;
+             border-bottom-left-radius: 20px;
+    -webkit-animation: movebg 2s linear infinite;
+       -moz-animation: movebg 2s linear infinite;
+}
+
+@-webkit-keyframes movebg {
+    0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+@-moz-keyframes movebg {
+    0% {
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 50px 50px;
+    }
+}
+
+@-moz-keyframes moveball {
+    0% {
+      width: 0%;  
+   }
+   100% {
+      width: 100%;  
+  }
+}
+
+@-webkit-keyframes moveball {
+    0% {
+       width: 0%;  
+    }
+    100% {
+       width: 100%;  
+    }
+}
+
+.flag-carrier {
+    background-image: url(/images/tiles.png);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: block;
+    z-index: 2;
+    right: -20px;
+    top: -10px;
+    position: absolute;
+}
+
+.flag-carrier .flag{
+    background-image: url(/images/tiles.png);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: block;
+    z-index: 2;
+    right: -20px;
+    top: -33px;
+    position: absolute;
+}
+
+.flag-carrier .flair{
+    background-image: url(/images/flair.png);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: block;
+    z-index: 3;
+    right: 14px;
+    top: -18px;
+    position: absolute;
+}
+
+.flag-carrier .name {
+  color: white;
+  position: absolute;
+  top: -18px;
+  left: 34px;
+  font-weight: 800;
+  display: none;
+  text-align: left;
+  width: 120px;
+  text-shadow: -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                 1px 1px 0 #000;
+}
+
+.goal {
+    position: absolute;
+    right: -20px;
+    top: -10px;
+    background-image: url(/images/tiles.png);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+
+.blue .progress {
+    background-color: #0000ff;
+    background-image: -moz-linear-gradient(top, #0000bf, #0000fb);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #0000bf),color-stop(1, #0000fb));
+    background-image: -webkit-linear-gradient(#0000bf, #0000fb); 
+}
+
+.blue .flag-carrier {
+    background-position: -600px 0px;
+}
+
+.blue .flag-carrier .flag {
+    background-position: -560px -40px;
+}
+
+.blue .goal {
+    background-position: -600px -40px;
+}
+
+.red .progress {
+    background-color: #ff0000;
+    background-image: -moz-linear-gradient(top, #bf0000, #fb0000);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #bf0000),color-stop(1, #fb0000));
+    background-image: -webkit-linear-gradient(#bf0000, #fb0000); 
+}
+
+.red .flag-carrier {
+    background-position: -560px 0px;
+}
+
+.red .flag-carrier .flag {
+    background-position: -600px -40px;
+}
+
+.red .goal {
+    background-position: -560px -40px;
+}
+
+.js-complete .flag-carrier .flag {
+  display: none;
+}
+
+.js-complete .flag-carrier .name {
+  display: block;
+}
+
+.ratio {
+    width: 100%;
+    height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ratio > span {
+    display: inline-block;
+    height: 25px;
+}
+
+.ratio > span.like {
+    background-color: #45FF54;
+}
+
+.ratio > span.indifferent {
+    background-color: #458BFF;
+}
+
+.ratio > span.dislike {
+    background-color: #FF9245;
+}
